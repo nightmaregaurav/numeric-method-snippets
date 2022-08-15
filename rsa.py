@@ -1,5 +1,16 @@
-import sympy
-
+def isprime(a):
+	if a <= 3:
+		return n > 1
+	if not a % 2 or not a % 3:
+		return False
+	
+	i = 5
+	stop = int(a ** 0.5)
+	while i <= stop:
+		if not a % i or not a % (i + 2):
+			return False
+		i += 6
+	return True
 
 def gcd(a,b):
 	while a != b:
@@ -13,14 +24,14 @@ def gcd(a,b):
 flag = True
 while flag:
 	p = int(input('P: '))
-	if not sympy.isprime(p):
+	if not isprime(p):
 		print("P is not prime, Try again...")
 	else:
 		flag = False
 flag = True
 while flag:
 	q = int(input('Q: '))
-	if not sympy.isprime(q):
+	if not isprime(q):
 		print("Q is not prime, Try again...")
 	elif q == p:
 		print("Q & P cannot be same, Try again...")
