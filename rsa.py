@@ -43,17 +43,25 @@ while flag:
 		print("Q & P cannot be same, Try again...")
 	else:
 		flag = False
-
+print("Computing n = pq")
+print(f"{n} = {p} * {q}")
 n = p*q
+print(f"n = {n}")
 
+print("Calculating Carmichael's totient of n as λ(n)")
+print("Since n = pq, λ(n) = lcm(λ(p), λ(q))")
+print("Again, since p and q are prime, λ(p) = φ(p) = p − 1")
+print("Likewise, λ(q) = q − 1")
+print("Hence λ(n) = lcm(p − 1, q − 1)")
+print(f"Or λ({n}) = lcm({p} − 1, {q} − 1)")
 λ_p = p - 1
 λ_q = q - 1
 λ_n = lcm(λ_p, λ_q)
-
-pi = (p-1)*(q-1)
+print(f"Or λ({n}) = lcm({λ_p}, {λ_q})")
+print(f"Or λ({n}) = {λ_n}")
 
 while True:
-	e = int(input('e: '))
+	e = int(input('Choose e such that 1 < e < λ(n), e and λ(n) are co-prine: '))
 	if not 1 < e < λ_n:
 		print("1 < e < λ(n) did not satisfied, Try again...")
 	elif gcd(e, λ_n) != 1:
@@ -61,16 +69,12 @@ while True:
 	else:
 		break
 
+print("Determine d as the modular multiplicative inverse of e modulo λ(n)")
+print("IE: (de + 1) mod λ(n) = 0")
 d = 0
 while true:
 	d += 1
 	x = (d * e) + 1 
 	if x % λ_n == 0:
 		break
-
-print(f'p = {p}')
-print(f'q = {q}')
-print(f'n = {n}')
-print(f'λ(n) = {λ_n}')
-print(f'e = {e}')
 print(f'd = {d}')
