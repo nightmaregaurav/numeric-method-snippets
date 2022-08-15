@@ -20,6 +20,12 @@ def gcd(a,b):
 			b -= a
 	return a
 
+def lcm(a,b):
+	if a == b == 0:
+		return 0
+	a,b = min(a,b), max(a,b)
+	return abs(a) * (abs(b) / gcd(a,b))	
+
 
 flag = True
 while flag:
