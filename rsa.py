@@ -72,9 +72,19 @@ while True:
 print("Determine d as the modular multiplicative inverse of e modulo λ(n)")
 print("IE: (de + 1) mod λ(n) = 0")
 d = 0
-while true:
+while True:
 	d += 1
 	x = (d * e) + 1 
 	if x % λ_n == 0:
 		break
 print(f'd = {d}')
+
+print("Summary:")
+print("\tPublic Keys:")
+print(f"\t\tn = {n}")
+print(f"\t\te = {e}")
+print("\tPrivate Key:")
+print(f"\t\td = {d}")
+print(f"p = {p}")
+print(f"q = {q}")
+print(f"λ(n) = {λ_n}")
