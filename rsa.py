@@ -1,6 +1,6 @@
 def isprime(a):
 	if a <= 3:
-		return n > 1
+		return a > 1
 	if not a % 2 or not a % 3:
 		return False
 	
