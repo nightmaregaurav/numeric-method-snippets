@@ -45,24 +45,32 @@ while flag:
 		flag = False
 
 n = p*q
-pi = (p-1)*(q-1)
 
-print(f'n = {n}')
-print(f'pi(n) = {pi}')
+λ_p = p - 1
+λ_q = q - 1
+λ_n = lcm(λ_p, λ_q)
+
+pi = (p-1)*(q-1)
 
 while True:
 	e = int(input('e: '))
-	if e <= 1 or e >= pi:
-		print("1<e<pi(n) did not satisfied, Try again...")
-	elif gcd(e, q) != 1:
-		print(f"e and pi(n) have common divisor: {gcd(e, q)}. Not a co-prime, Try again...")
+	if not 1 < e < λ_n:
+		print("1 < e < λ(n) did not satisfied, Try again...")
+	elif gcd(e, λ_n) != 1:
+		print(f"e and λ(n) have common divisor: {gcd(e, λ_n)}. Not a co-prime, Try again...")
 	else:
 		break
 
-for i in range(1,10): 
-	x = 1 + i*pi 
-	if x % e == 0: 
-		d = int(x/e) 
+d = 0
+while true:
+	d += 1
+	x = (d * e) + 1 
+	if x % λ_n == 0:
 		break
 
+print(f'p = {p}')
+print(f'q = {q}')
+print(f'n = {n}')
+print(f'λ(n) = {λ_n}')
+print(f'e = {e}')
 print(f'd = {d}')
