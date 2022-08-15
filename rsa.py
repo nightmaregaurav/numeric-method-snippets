@@ -24,7 +24,7 @@ def lcm(a,b):
 	if a == b == 0:
 		return 0
 	a,b = min(a,b), max(a,b)
-	return abs(a) * (abs(b) / gcd(a,b))	
+	return int(abs(a) * (abs(b) / gcd(a,b)))
 
 
 flag = True
