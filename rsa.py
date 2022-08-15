@@ -44,7 +44,7 @@ while flag:
 	else:
 		flag = False
 print("Computing n = pq")
-print(f"{n} = {p} * {q}")
+print(f"n = {p} * {q}")
 n = p*q
 print(f"n = {n}")
 
