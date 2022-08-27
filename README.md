@@ -1,3 +1,4 @@
+# Numeric method snippets
 ---
 
 ## Note
